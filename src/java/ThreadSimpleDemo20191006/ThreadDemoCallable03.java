@@ -15,7 +15,12 @@ public class ThreadDemoCallable03 {
 
 
     public static void main(String[] args) throws Exception {
-        FutureTask<String> futureTask = new FutureTask<>(new CallableThread());
+        FutureTask<String> futureTask = new FutureTask<>(()->{
+            for(int x = 0;x<10;x++){
+                System.out.println("*****线程执行，x="+x);
+            }
+            return "线程执行完毕";
+        });
         new Thread(futureTask).start();
         System.out.println("【线程返回数据】" + futureTask.get());
     }
