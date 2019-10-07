@@ -51,11 +51,13 @@ public class ThreadDemo01 {
 //        thread.start();
         for(int i = 0; i < 3; i++){
             String title = "线程对象-" + i;
-            new Thread( ()->{
-                for(int y = 0; y < 10; y++){
-                    System.out.println(title + "运行，x=" + y);
+            new Thread(
+                    ()->{
+                        for(int y = 0; y < 10; y++){
+                            System.out.println(title + "运行，x=" + y);
+                        }
                 }
-            }).start();
+            ).start();
         }
     }
 
