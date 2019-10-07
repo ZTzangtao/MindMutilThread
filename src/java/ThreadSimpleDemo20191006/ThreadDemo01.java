@@ -9,6 +9,8 @@ class MyThread extends Thread{
     public MyThread (String title){
         this.title = title;
     }
+    public MyThread (){}
+
     /**
      * 线程的主体方法
      */
